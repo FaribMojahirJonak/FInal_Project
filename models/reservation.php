@@ -1,3 +1,12 @@
+<head>
+    <style>
+        table
+        {
+            color: white;
+        }
+    </style>
+</head>
+
 <?php 
     require_once('db.php');
 

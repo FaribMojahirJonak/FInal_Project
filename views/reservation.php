@@ -1,3 +1,9 @@
+<head>
+    <title>Make a Reservation</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
 <?php
 	session_start();
     require_once('../models/reservation.php');
@@ -24,3 +30,4 @@
     }
 
 ?>
+</body>

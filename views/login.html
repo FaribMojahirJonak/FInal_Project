@@ -1,17 +1,61 @@
 <html>
     <head>
         <title>Login</title>
+        <style>
+        body
+		{
+			background-image: url("../image/hotel.jpg");
+			background-repeat: no-repeat;
+  			background-size: cover;
+		}
+        label
+        {
+            color: white;
+        }
+        legend
+        {
+            color: white;
+        }
+        form
+		{
+			position: relative;
+			margin: 10px 500px;
+		}
+        input 
+		{
+			border: 2px solid white;
+  			border-radius: 4px;
+			height: 35px;
+			width: 150px;
+			margin: 5px;
+			background: transparent;
+			color: white;
+  		}
+        #login
+        {
+            margin-top: 250px;
+        }
+        #create
+        {
+            color: white;
+            margin-left: 40%;
+        }
+        a
+        {
+            color: white;
+        }
+        </style>
     </head>
     <body>
         <form method="POST" action="../controllers/logincheck.php" enctype="">
-            <fieldset>
+            <fieldset id="login">
                 <legend>Login</legend>
-                Username: <input type="text" name="username" value="" placeholder="username" /> <br>
-                Password: <input type="password" name="password" value="" /> <br>
+                <label for="username">Username:</label><input type="text" name="username" value=""/> <br>
+                <label for="password">Password:</label><input type="password" name="password" value="" /> <br>
                 <input type="submit" name="submit" value="Submit" />
             </fieldset>
         </form>
-        <a href="registration.php">Create an account.</a>
+        <a href="registration.php" id="create">Create an account</a>
         <a href="forget.html">Forget Password</a>
     </body>
 </html>

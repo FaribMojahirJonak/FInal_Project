@@ -4,6 +4,51 @@
     {
 ?>
 
+<head>
+    <title>Take a Ride</title>
+    <style>
+        input 
+		{
+			border: 2px solid white;
+  			border-radius: 4px;
+			height: 35px;
+			width: 200px;
+			margin: 5px;
+			background: transparent;
+			color: white;
+  		}
+		select 
+		{
+			border: 2px solid white;
+  			border-radius: 4px;
+			height: 35px;
+			width: 100px;
+			margin: 5px;
+			background: transparent;
+			color: white;
+		}
+		form
+		{
+			position: relative;
+			margin: 10px 500px;
+		}
+		body
+		{
+			background-image: url("../image/hotel.jpg");
+			background-repeat: no-repeat;
+  			background-size: cover;
+		}
+		label
+		{
+			color: white;
+		}
+		a
+		{
+			color: white;
+		}
+    </style>
+</head>
+<body>
 <a href="membership.php">Membership</a>
 <a href="ride.php">Take a Ride</a>
 <a href="admin.php">Admin Panel</a>
@@ -13,28 +58,31 @@
 
 <h1>Take a ride service.</h1>
 <form method="POST" action="../controllers/ride_confirmation.php" enctype="">   
-    Select a Service:
+    <label for="service">Select a Service:</label>
     <select name="service">
         <option value="drop">Drop Off</option>
         <option value="pick">Pick Up</option>
     </select><br>
-    Contact Number:<input type="tel" name="phone_number" /><br>
-    Select a Vehicle:
+    <label for="number">Contact Number:</label><input type="tel" name="phone_number" /><br>
+    <label for="vehicle">Select a Vehicle:</label>
     <select name="vehicle">
         <option value="car">Car</option>
         <option value="coaster">Coaster</option>
         <option value="bike">Bike</option>
     </select><br>
-    Location:<input type="textarea" name="location" /><br>
+    <label for="lacation">Location:</label><input type="textarea" name="location" /><br>
     <input type="submit" name="submit" value="Send Ride" />
 </form>
 
 <?php
     }
     else{
-        echo "invalid request, please <a href='../../session_login/index.html'>login</a> first.";
+        echo "invalid request, please <a href='login.html'>login</a> first.";
     }
 
 ?>
+</body>
+
+
 
 

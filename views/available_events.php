@@ -1,3 +1,8 @@
+<head>
+    <title>Available Events</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <?php 
     session_start();
     require_once('../models/event.php');
@@ -28,3 +33,4 @@
     }
 
 ?>
+</body>

@@ -1,3 +1,15 @@
+<head>
+    <style>
+        table
+        {
+            color: white;
+            margin-top: 100px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
 <?php 
     require_once('db.php');
 

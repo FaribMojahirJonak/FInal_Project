@@ -1,3 +1,8 @@
+<head>
+    <title>Post an Event</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <?php 
     session_start();
     if(isset($_SESSION['flag'])){
@@ -31,3 +36,5 @@
 
 ?>
 
+
+</body>

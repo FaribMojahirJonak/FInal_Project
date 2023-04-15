@@ -1,3 +1,9 @@
+<head>
+    <title>Post an Event</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
 <?php 
     session_start();
     require_once('../models/event.php');
@@ -19,7 +25,7 @@ if(isset($_REQUEST['post_event']))
     $time = $_REQUEST['time'];
     if($type == "" || $date == "" || $time == "")
             {
-                echo "Null Data Found!";
+                echo "<p>Null Data Found!</p>";
             }
             else
             {
@@ -28,10 +34,10 @@ if(isset($_REQUEST['post_event']))
 
                 if($status)
                 {
-                    echo "event is posted.";
+                    echo "<p>Event is posted.</p>";
                 }else
                 {
-                    echo "DB error, please try again";
+                    echo "<p>DB error, please try again</p>";
                 }
             }
 }
@@ -40,7 +46,8 @@ if(isset($_REQUEST['post_event']))
 <?php
     }
     else{
-        echo "invalid request, please <a href='../views/login.html'>login</a> first.";
+        echo "<p>invalid request, please <a href='../views/login.html'>login</a> first.</p>";
     }
 
 ?>
+</body>

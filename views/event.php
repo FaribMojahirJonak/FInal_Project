@@ -1,3 +1,9 @@
+<head>
+    <title>Event Announcement</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
 <?php 
     session_start();
     if(isset($_SESSION['flag'])){
@@ -10,7 +16,7 @@
 <a href="event.php">Event Announcement</a>
 <a href="../controllers/logout.php">Log out</a>
 
-<h2> Select an event</h2>
+<h2 style="color: white"> Select an event</h2>
 <a href="join_event.php">Join an Event</a>
 <a href="post_event.php">post an Event</a>
 
@@ -22,3 +28,4 @@
     }
 
 ?>
+</body>

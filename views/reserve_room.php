@@ -1,3 +1,9 @@
+<head>
+	<title>make a Reservation</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
 <?php
 	session_start();
     require_once('../models/reservation.php');
@@ -15,12 +21,12 @@
 
 <h1>Make a Reservation</h1>
 <form method="POST" action="../controllers/make_reservation_confirmation.php" enctype="">
-	Customer Name:<input type="text" name="name"><br>
-	Customer Email:<input type="email" name="email"><br>
-	Customer Phone:<input type="tel" name="phone_number"><br>	
-	Check-In Date:<input type="date" name="check_in_date"><br>	
-	Check-Out Date:<input type="date" name="check_out_date"><br>
-	Room Type:
+	<label for="name">Customer Name:</label><input type="text" name="name"><br>
+	<label for="email">Customer Email:</label><input type="email" name="email"><br>
+	<label for="phone">Customer Phone:</label><input type="tel" name="phone_number"><br>	
+	<label for="check_in_date">Check-In Date:</label><input type="date" name="check_in_date"><br>	
+	<label for="check_out_date">Check-Out Date:</label><input type="date" name="check_out_date"><br>
+	<label for="type">Room Type:</label>
 	<select  name="room_type" >
 		<option value="single">Single</option>
 		<option value="double">Double</option>
@@ -34,7 +40,8 @@
 <?php
     }
     else{
-        echo "invalid request, please <a href='login.html'>login</a> first.";
+        echo "<p>invalid request, please <a href='login.html'>login</a> first.</p>";
     }
 
 ?>
+</body>

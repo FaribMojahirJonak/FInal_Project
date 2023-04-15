@@ -1,6 +1,11 @@
+<head>
+    <title>Manage Ride Request</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <?php
     session_start();
-    require_once('../models/ride-confirmation.php');
+    require_once('../models/ride_service.php');
     if(isset($_SESSION['flag']))
 	{
 
@@ -22,3 +27,4 @@
         echo "invalid request, please <a href='../views/login.html'>login</a> first.";
     }
 ?>
+</body>

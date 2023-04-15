@@ -1,3 +1,8 @@
+<head>
+    <title>Show Billing information</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <?php
 	session_start();
     require_once('../models/billing_information.php');
@@ -20,3 +25,4 @@
     }
 
 ?>
+</body>

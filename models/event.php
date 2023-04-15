@@ -1,3 +1,12 @@
+<head>
+  <style>
+    p
+    {
+      color: white;
+    }
+  </style>
+</head>
+
 <?php 
     require_once('db.php');
 
@@ -21,14 +30,14 @@
         {
             while($row = mysqli_fetch_assoc($result)) 
             {
-              echo "Event Type: " . $row["event_type"] . "<br>";
-              echo "Event Date: " . $row["event_date"] . "<br>";
-              echo "Event Time: " . $row["event_time"] . "<br><br>";
+              echo "<p>Event Type: " . $row["event_type"] . "<br></p>";
+              echo "<p>Event Date: " . $row["event_date"] . "<br></p>";
+              echo "<p>Event Time: " . $row["event_time"] . "<br><br></p>";
             }
           } 
           else 
           {
-            echo "No event is listed currently!";
+            echo "<p>No event is listed currently!</p>";
           }
     }
     //event announcement end

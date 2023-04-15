@@ -1,0 +1,43 @@
+input 
+		{
+			border: 2px solid white;
+  		border-radius: 4px;
+			height: 40px;
+			width: 200px;
+			margin: 5px;
+			background: transparent;
+			color: white;
+  		}
+		select 
+		{
+			border: 2px solid white;
+  		border-radius: 4px;
+			height: 35px;
+			width: 100px;
+			margin: 5px;
+			background: transparent;
+			color: white;
+		}
+		form
+		{
+			position: relative;
+			text-align: center;
+		}
+		body
+		{
+			background-image: url("../image/hotel.jpg");
+			background-repeat: no-repeat;
+  			background-size: cover;
+		}
+		label
+		{
+			color: white;
+		}
+		a
+		{
+			color: white;
+		}
+    p
+    {
+      color: white;
+    }

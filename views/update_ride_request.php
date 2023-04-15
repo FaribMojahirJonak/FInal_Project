@@ -1,3 +1,9 @@
+<head>
+    <title>Manage Ride Service</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
 <?php
     session_start();
     if(isset($_SESSION['flag']))
@@ -15,22 +21,24 @@
 <a href="reservation.php">Reservation</a>
 <a href="event.php">Event Announcement</a>
 <a href="../controllers/logout.php">Log out</a><br>
+
+<h1 style="text-align:center; margin-top:100px; color:white">Manage Ride Request</h1>
 <form method="POST" action="../controllers/update_ride_confirmation.php" enctype="">   
-    ID: <input type="num" name="id" value="<?php echo "$id"?>" /><br>
-    Select a Service:
+    <label for="id">ID:</label> <input type="num" name="id" value="<?php echo "$id"?>" /><br>
+    <label for="service">Select a Service:</label>
     <select name="service" value="<?php echo "$service"?>">
         <option value="drop">Drop Off</option>
         <option value="pick">Pick Up</option>
     </select><br>
-    Contact Number:<input type="tel" name="phone_number" value="<?php echo "$phone_number"?>" /><br>
-    Select a Vehicle:
+    <label for="number">Contact Number:</label><input type="tel" name="phone_number" value="<?php echo "$phone_number"?>" /><br>
+    <label for="vehicle">Select a Vehicle:</label>
     <select name="vehicle" value="<?php echo "$vehicle"?>">
         <option value="car">Car</option>
         <option value="coaster">Coaster</option>
         <option value="bike">Bike</option>
     </select><br>
-    Location:<input type="textarea" name="location" value="<?php echo "$location"?>"/><br>
-    Status:
+    <label for="location">Location:</label><input type="textarea" name="location" value="<?php echo "$location"?>"/><br>
+    <label for="status">Status:</label>
     <select name="status" value="<?php echo "$status"?>">
         <option value="confirm">Confirm</option>
         <option value="Cancel">Cancel</option>
@@ -44,3 +52,4 @@
         echo "invalid request, please <a href='login.html'>login</a> first.";
     }
 ?>
+</body>
