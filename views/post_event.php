@@ -1,4 +1,4 @@
-<head>
+<ehead>
     <title>Post an Event</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -13,18 +13,18 @@
 <a href="reservation.php">Reservation</a>
 <a href="event.php">Event Announcement</a>
 <a href="../controllers/logout.php">Log out</a><br>
-<h1>Post an Event</h1>
-<form method="post" action="../controllers/post_event_confirmation.php">
-    <p>Select an event</p>
+<h1 style="color: white; text-align: center; margin-top:100px"> Post an Event</h1>
+<form method="post" action="../controllers/post_event_confirmation.php" onsubmit="event()">
+    <label for="event">Select an event</label>
     <select name="type" id="">
         <option value="bbq">bbq</option>
         <option value="party">party</option>
         <option value="tour">tour</option>
     </select><br>
-    <p>Select date</p>
-    <input type="date" name="date" value="" /><br>
-    <p>Select time</p>
-    <input type="time" name="time" value="" /><br>
+    <label for="date">Select date</label>
+    <input type="date" name="date" value="" id="date" /><br>
+    <label for="time">Select time</label>
+    <input type="time" name="time" value="" id="time"/><br>
     <input type="submit" name="post_event" value="post event" />
 </form>
 
@@ -38,3 +38,22 @@
 
 
 </body>
+
+<script>
+	function event()
+	{
+		let date = document.getElementById('date').value;
+    	let time = document.getElmentById('time').value;
+		
+		
+		if(date == "")
+		{
+			alert("Please fill up date");
+		}
+    	else if(time == "")
+		{
+			alert("Please fill up time");
+		}
+    	
+	}
+</script>

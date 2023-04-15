@@ -67,13 +67,13 @@
 <a href="../controllers/logout.php">Log out</a>
 
 <h2 style="text-align:center; margin-top:100px; color:white">Customer Billing Information Management</h2>
-<form method="POST" action="../controllers/update_billing.php" enctype="">
-	<label for="id">Customer ID:</label> <input type="num" name="id" value="<?php echo "$id"?>"><br>
-	<label for="name">Customer Name:</label><input type="text" name="name" value="<?php echo "$name"?>"><br>
-	<label for="card_number">Customer Card Number:</label><input type="text" name="card_number" value="<?php echo "$card_number"?>"><br>	
-	<label for="phone">Customer Phone:</label><input type="tel" name="phone_number" value="<?php echo "$phone_number"?>"><br>	
-	<label for="cvv">CVV:</label><input type="text" name="cvv" value="<?php echo "$cvv"?>"><br>	
-	<label for="exp">Exp(MM/YY) :</label><input type="text" name="exp" value="<?php echo "$exp"?>"><br>	
+<form method="POST" action="../controllers/update_billing.php" enctype="" onsubmit="billing()">
+	<label for="id">Customer ID:</label> <input type="num" name="id" value="<?php echo "$id"?>" id="id"><br>
+	<label for="name">Customer Name:</label><input type="text" name="name" value="<?php echo "$name"?>" id="name"><br>
+	<label for="card_number">Customer Card Number:</label><input type="text" name="card_number" value="<?php echo "$card_number"?>" id="card_number"><br>	
+	<label for="phone">Customer Phone:</label><input type="tel" name="phone_number" value="<?php echo "$phone_number"?>" id="phone"><br>	
+	<label for="cvv">CVV:</label><input type="text" name="cvv" value="<?php echo "$cvv"?>" id="cvv"><br>	
+	<label for="exp">Exp(MM/YY) :</label><input type="text" name="exp" value="<?php echo "$exp"?>" id="exp"><br>	
 	<label for="status">Status:</label>
 	<select name="status" value="<?php echo "$status"?>">
 		<option value="confirm">confirm</option>
@@ -91,3 +91,39 @@
     }
 
 ?>
+
+<script>
+	function billing()
+	{
+		let id = document.getElementById('id').value;
+		let name = document.getElementById('name').value;
+    	let card_number = document.getElementById('card_number').value;
+		let phone = document.getElementById('phone').value;
+    	let cvv = document.getElementById('cvv').value;
+		let exp = document.getElementById('exp').value;
+		if(id == "")
+		{
+			alert("Please fill up id");
+		}
+		else if(name == "")
+		{
+			alert("Please fill up name");
+		}
+    	else if(card_number == "")
+		{
+			alert("Please fill up card number");
+		}
+    	else if(phone == "")
+		{
+			alert("Please fill up phone number");
+		}
+    	else if(cvv == "")
+		{
+			alert("Please fill up cvv");
+		}
+    	else if(exp == "")
+		{
+			alert("Please fill up expiry date");
+		}
+	}
+</script>

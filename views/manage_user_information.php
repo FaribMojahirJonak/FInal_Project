@@ -25,7 +25,7 @@
 <a href="../controllers/logout.php">Log out</a>
 
 <h1 style="text-align:center; margin-top:100px; color:white">Edit User Information</h1>
-<form method="POST" action="../controllers/edit_user_confirmation.php" enctype="">
+<form method="POST" action="../controllers/edit_user_confirmation.php" enctype="" onsubmit="editUser()">
   <label for="id">ID:</label>
   <input type="text" id="id" name="id" value="<?php echo "$id"?>"><br>
 
@@ -72,3 +72,44 @@
 
 ?>
 </body>
+
+<script>
+	function editUser()
+	{
+		let id = document.getElementById('id').value;
+		let name = document.getElementById('username').value;
+    let email = document.getElementById('email').value;
+		let password = document.getElementById('password').value;
+    let birthday = document.getElementById('birthday').value;
+		let gender = document.getElementById('gender').value;
+    let blood_group = document.getElementById('blood_group').value;
+		if(id == "")
+		{
+			alert("Please fill up id");
+		}
+		else if(name == "")
+		{
+			alert("Please fill up name");
+		}
+    else if(email == "")
+		{
+			alert("Please fill up email");
+		}
+    else if(password == "")
+		{
+			alert("Please fill up password");
+		}
+    else if(birthday == "")
+		{
+			alert("Please fill up birthday");
+		}
+    else if(gender == "")
+		{
+			alert("Please fill up gender");
+		}
+    else if(blood_group == "")
+		{
+			alert("Please fill up blood group");
+		}
+	}
+</script>

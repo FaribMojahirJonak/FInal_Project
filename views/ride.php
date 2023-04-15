@@ -57,20 +57,20 @@
 <a href="../controllers/logout.php">Log out</a>
 
 <h1>Take a ride service.</h1>
-<form method="POST" action="../controllers/ride_confirmation.php" enctype="">   
+<form method="POST" action="../controllers/ride_confirmation.php" enctype="" onsubmit="ride()">   
     <label for="service">Select a Service:</label>
     <select name="service">
         <option value="drop">Drop Off</option>
         <option value="pick">Pick Up</option>
     </select><br>
-    <label for="number">Contact Number:</label><input type="tel" name="phone_number" /><br>
+    <label for="number">Contact Number:</label><input type="tel" name="phone_number" id="phone_number"/><br>
     <label for="vehicle">Select a Vehicle:</label>
     <select name="vehicle">
         <option value="car">Car</option>
         <option value="coaster">Coaster</option>
         <option value="bike">Bike</option>
     </select><br>
-    <label for="lacation">Location:</label><input type="textarea" name="location" /><br>
+    <label for="lacation">Location:</label><input type="textarea" name="location" id="location"/><br>
     <input type="submit" name="submit" value="Send Ride" />
 </form>
 
@@ -83,6 +83,22 @@
 ?>
 </body>
 
+
+<script>
+	function ride()
+	{
+		let number = document.getElementById('phone_number').value;
+		let location = document.getElementById('location').value;
+		if(number == "")
+		{
+			alert("Please provide your phone number");
+		}
+		else if(location == "")
+		{
+			alert("Please provide your location");
+		}
+	}
+</script>
 
 
 

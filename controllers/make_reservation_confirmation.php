@@ -30,7 +30,7 @@ if(isset($_REQUEST['submit']))
     $room_type = $_REQUEST['room_type'];
     if($name == "" || $email == "" || $phone_number == "" || $check_in_date == "" || $check_out_date == "" || $room_type == "")
     {
-        echo "null data found!";
+        echo "<p>Null data found!</p>";
     }
     else
     {

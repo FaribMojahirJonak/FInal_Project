@@ -47,15 +47,37 @@
         </style>
     </head>
     <body>
-        <form method="POST" action="../controllers/logincheck.php" enctype="">
+        <form method="POST" action="../controllers/logincheck.php" enctype="" onsubmit="login()">
             <fieldset id="login">
                 <legend>Login</legend>
-                <label for="username">Username:</label><input type="text" name="username" value=""/> <br>
-                <label for="password">Password:</label><input type="password" name="password" value="" /> <br>
+                <label for="username">Username:</label>
+                <input type="text" name="username" value="" id="name"/> <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" value="" id="password"/> <br>
                 <input type="submit" name="submit" value="Submit" />
             </fieldset>
         </form>
         <a href="registration.php" id="create">Create an account</a>
         <a href="forget.html">Forget Password</a>
+
+
+
+        <script>  
+            function login()
+            {  
+                let username=document.getElementById('name').value;
+                let password=document.getElementById('password').value;
+        
+                if (username=="")
+                {  
+                    alert("Enter your username please");  
+                }
+                else if(password=="")
+                {  
+                    alert("Enter your password please");  
+                }  
+            }  
+        </script>
     </body>
 </html>
+

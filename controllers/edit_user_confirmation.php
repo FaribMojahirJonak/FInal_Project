@@ -16,6 +16,8 @@
 <a href="../views/reservation.php">Reservation</a>
 <a href="../views/event.php">Event Announcement</a>
 <a href="logout.php">Log out</a><br>
+
+
 <?php
 
 $id = $_REQUEST['id'];
@@ -28,7 +30,7 @@ $blood_group = $_REQUEST['blood_group'];
 
 if($id == "" || $username = "" || $email == "" || $password == "" || $birthday == "" || $gender == "" || $blood_group == "" )
 {
-    echo "null data found!";
+    echo "<p>null data found!</p>";
 }
 else
 {
@@ -42,7 +44,7 @@ else
 }
     }
     else{
-        echo "invalid request, please <a href='../views/login.html'>login</a> first.";
+        echo "<p>invalid request, please <a href='../views/login.html'>login</a> first.</p>";
     }
 
 ?>

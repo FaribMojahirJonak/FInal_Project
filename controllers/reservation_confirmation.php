@@ -31,7 +31,7 @@ if(isset($_REQUEST['submit']))
     $status = $_REQUEST['status'];
     if($id == "" ||$name == "" || $email == "" || $phone_number == "" || $check_in_date == "" || $check_out_date == "" || $room_type == "" || $status == "")
     {
-        echo "null data found!";
+        echo "<p>null data found!</p>";
     }
     else
     {

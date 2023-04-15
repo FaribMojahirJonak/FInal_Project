@@ -29,7 +29,7 @@ if(isset($_REQUEST['submit']))
     $status = $_REQUEST['status'];
     if($id == "" ||$service == "" || $phone_number == "" || $vehicle == "" || $location == "" || $status == "")
     {
-        echo "null data found!";
+        echo "<p>null data found!</p>";
     }
     else
     {

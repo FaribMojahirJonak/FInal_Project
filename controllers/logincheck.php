@@ -1,3 +1,8 @@
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <?php 
     session_start();
     require_once('../models/userModel.php');
@@ -9,7 +14,8 @@
 
         if($username == "" && $password == "")
         {
-            echo "null data found...";
+            echo "<p>null data found</p>";
+            echo "<a href='../views/login.html'>Try Again</a>";
         }
         else
         {
@@ -22,7 +28,7 @@
             }
             else
             {
-                echo "invalid user";
+                echo "<p>invalid user. Please <a href='../views/login.html'>Try Again</a> </p>";
             }
         }
     
@@ -31,3 +37,4 @@
     }
 
 ?>
+</body>

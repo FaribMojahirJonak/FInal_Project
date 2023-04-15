@@ -71,9 +71,9 @@
             $vehicle = $_REQUEST['vehicle'];
             $location = $_REQUEST['location'];
 
-            if($service == "" || $phone_number == "" || $vehicle == "" || $location == "")
+            if($phone_number == "" || $location == "")
             {
-                echo "null data found!";
+                echo "<p>Null data found!</p>";
             }
             else
             {

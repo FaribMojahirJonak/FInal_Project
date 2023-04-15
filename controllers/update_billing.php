@@ -31,7 +31,7 @@ if(isset($_REQUEST['submit']))
     $status = $_REQUEST['status'];
     if($id == "" ||$name == "" || $card_number == "" || $phone_number == "" || $cvv == "" || $exp == "" || $status == "")
     {
-        echo "null data found!";
+        echo "<p>null data found!</p>";
     }
     else
     {
