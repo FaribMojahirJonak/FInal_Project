@@ -24,41 +24,46 @@
         return $status;
     }
 
-    // function addRoom($addRoom)
-    // {
-    //     $con = getConnection();
-    //     $sql = "insert into room_inventory values('', '{$addRoom['room_type']}', '{$addRoom['room_number']}', '{$addRoom['price']}')";
-    //     $status = mysqli_query($con, $sql);
-    //     return $status;
+    
 
-    // }
-
-    function postEvent($postEvent)
+    //show user information
+    function showInfo()
     {
         $con = getConnection();
-        $sql = "insert into event values('', '{$postEvent['event_type']}', '{$postEvent['event_date']}', '{$postEvent['event_time']}')";
+        $sql = "select* from user";
+        $result = mysqli_query($con, $sql);
+        echo "<table border='1'>";
+        echo "<tr><th>Name</th><th>Email</th><th>Password</th><th>Date of Birth</th><th>Gender</th><th>Blood Group</th><th colspan = '2'>Action</th></tr>";
+        while ($row = mysqli_fetch_assoc($result)) 
+        {
+            echo "<tr><td>{$row['username']}</td><td>{$row['email']}</td><td>{$row['password']}</td><td>{$row['birthday']}</td><td>{$row['gender']}</td><td>{$row['blood_group']}</td><td><a href='../views/manage_user_information.php?id={$row['id']}&username={$row['username']}&email={$row['email']}&password={$row['password']}&birthday={$row['birthday']}&gender={$row['gender']}&blood_group={$row['blood_group']}'>Edit</a></td><td><a href='../controllers/delete_user.php?id={$row['id']}'>Delete</a></td></tr>";
+        }
+        echo "</table>";
+        return $result;
+    }
+
+    //update user information
+    function updateInfo($info)
+    {
+        $con = getConnection();
+        $sql = "UPDATE user SET id = '{$info['id']}', username = '{$info['username']}', email = '{$info['email']}', password = '{$info['password']}', birthday = '{$info['birthday']}', gender = '{$info['gender']}', blood_group = '{$info['blood_group']}' WHERE id = '{$info['id']}'";
         $status = mysqli_query($con, $sql);
         return $status;
     }
 
-    function joinEvent()
+    //delete user information
+    function deleteUser($id)
     {
         $con = getConnection();
-        $sql = "select* from event";
-        $result = mysqli_query($con, $sql);
-        if (mysqli_num_rows($result) > 0) 
-        {
-            while($row = mysqli_fetch_assoc($result)) 
-            {
-              echo "Event Type: " . $row["event_type"] . "<br>";
-              echo "Event Date: " . $row["event_date"] . "<br>";
-              echo "Event Time: " . $row["event_time"] . "<br><br>";
-            }
-          } 
-          else 
-          {
-            echo "No event is listed currently!";
-          }
+        $sql = "delete from user where id = '$id'";
+        $status = mysqli_query($con, $sql);
+        return $status;
     }
+
+    
+
+    
+
+   
 
 ?>

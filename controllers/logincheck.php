@@ -17,6 +17,7 @@
             if($status)
             {
                 $_SESSION['flag'] = "true";
+                $_SESSION['username'] = $username;
                 header('location: ../views/home.php');
             }
             else
